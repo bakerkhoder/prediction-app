@@ -1,0 +1,26 @@
+.rred{
+    background-color: red;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+img {
+    height: 100%;
+}
+
+/*prediction main container*/
+.prediction{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.greeting-image{
+    align-items: center;
+    align-content: center;
+    padding-left: 35%;
+}
