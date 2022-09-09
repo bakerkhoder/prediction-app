@@ -5,12 +5,16 @@
 btn=document.querySelector("button")
 btn.addEventListener("click",()=>{
 let name =document.querySelector("input").value
+let gender=document.querySelector(".gender")
 const genderapi="https://api.genderize.io/?name=rio".replace("rio", name);
-console.log(genderapi)
 fetch(genderapi)
 	.then(response => response.json())
-	.then(data => console.log(data))
+	.then((data) => {
+        console.log(data)
+    gender.textContent=data.gender})
 	.catch(err => console.error(err));
+
+//gender.textContent=dta    
 })
 
 
