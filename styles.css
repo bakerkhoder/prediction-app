@@ -17,9 +17,14 @@ img {
     padding: 20px;
     display: flex;
     flex-direction: column;
+    background-image: linear-gradient(rgb(138, 130, 130), rgb(147, 170, 206));
+    background-size: cover;
+    height: 100vh;
+    box-sizing: border-box;
+    }
   
    
-}
+
 .greeting-image{
     align-items: center;
     align-content: center;
@@ -27,8 +32,8 @@ img {
 }
 /*dog image design*/
 .greeting-image>img{
-    width: 40vw;
-    height: auto;
+    width: auto;
+    height: 40vh;
     border: 2px solid rgb(61, 60, 60);
     border-radius: 5px;
     box-shadow: 3px 3px 3px rgb(61, 60, 60);
