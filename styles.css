@@ -1,12 +1,11 @@
-.rred{
-    background-color: red;
-}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 
 
 img {
@@ -18,9 +17,55 @@ img {
     padding: 20px;
     display: flex;
     flex-direction: column;
+   
 }
 .greeting-image{
     align-items: center;
     align-content: center;
     padding-left: 35%;
+}
+/*dog image design*/
+.greeting-image>img{
+    width: 40vw;
+    height: auto;
+    border: 2px solid rgb(61, 60, 60);
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px rgb(61, 60, 60);
+    margin-top: 20px;
+    
+}
+.greeting-image>h1{
+    font-weight: bold;
+    padding-left: 5vw;
+    
+}
+/*the input field*/
+.input-part{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+input{
+    width: 10vw;
+    height: 5vh;
+}
+.btn{
+    width:100px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: gray;
+    box-shadow: 2px 2px gray;
+}
+/*the prediction result*/
+.prediction-result{
+    margin-top: 30px;
+}
+
+/*Utilizes*/
+.fontsize{
+    font-size: medium;
+    font-weight: bold;
+
 }

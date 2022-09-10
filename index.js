@@ -48,17 +48,5 @@ fetch(nationalityapi)
         })
         })
     .catch(err => console.error(err));
-    
-    
-     
-
    })
 
-   
-
-
-
-
-
-
-document.querySelector(".prediction").classList.add("rred")
