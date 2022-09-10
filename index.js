@@ -43,9 +43,8 @@ fetch(nationalityapi)
 	.then((data) => {
         console.log(data.country)
         let countries=data.country
-        countries.forEach((item)=>{
-            nationality.textContent+=item.country_id+"    "
-        })
+        nationality.textContent=""
+     nationality.textContent=countries[0].country_id+"  "+countries[1].country_id
         })
     .catch(err => console.error(err));
    })
