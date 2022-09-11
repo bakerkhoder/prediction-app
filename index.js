@@ -4,7 +4,7 @@
  const email =document.querySelector("#email").value
  const password =document.querySelector("#email").value
  const popup =document.querySelector("#popup")
-window.localStorage.setItem(email,password)
+ window.localStorage.setItem(email,password)
 if(email!="" && password!=""){
     popup.classList.add("none")
   }})
@@ -20,6 +20,7 @@ else
  {document.querySelector("#login-error").textContent="invalid email please retry or sign in"}})
 /*end Login form */
 
+
 /* start rendering a random dog image on every load*/
 let image=document.querySelector("img")    
 const imageapi="https://dog.ceo/api/breeds/image/random"
@@ -30,6 +31,18 @@ axios.get(imageapi)
       })
 /* end rendering a random dog image on every load*/
 
+/* adding api when loading the page */
+const api= document.querySelector('#api')
+axios.get("https://api.ipify.org/?format=json")
+      .then(res => {
+        const data = res.data;
+        console.log(data)
+        api.textContent=data.ip
+      })
+
+
+
+/* accomplishing all the predict misions when we click the button */
 btn=document.querySelector("button")
 btn.addEventListener("click",()=>{
 let name =document.querySelector("input").value
@@ -73,15 +86,11 @@ boredbutton.addEventListener("click",()=>{
  
     axios.get(boredapi)
       .then(res => {
-         const boredtext=document.querySelector("#bored-text")
+        let boredtext=document.querySelector("#bored-text") 
         const data = res.data;
         console.log(data.activity)
-        boredtext.innerHTML=data.activity
-
-         
+        boredtext.textContent=data.activity
       })
-
-    
 })
 
 /*https://www.boredapi.com/api/activity */

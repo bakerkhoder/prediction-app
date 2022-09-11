@@ -25,6 +25,7 @@ img {
     background-size: cover;
     height: 100vh;
     box-sizing: border-box;
+    align-items: center;
     }
   
    
@@ -32,7 +33,7 @@ img {
 .greeting-image{
     align-items: center;
     align-content: center;
-    padding-left: 35%;
+
 }
 /*dog image design*/
 .greeting-image>img{
@@ -45,10 +46,19 @@ img {
     
 }
 .greeting-image>h1{
-    font-weight: bold;
-    padding-left: 10vw;
-    
+    font-weight: bold;}
+/*api container design*/
+.api-container{
+    background-color: white;
+    color: rgb(207, 40, 90);
+    display: flex;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px ;
+    padding-left: 25px;
+    margin-top: 5px;
 }
+    
+
 /*the input field*/
 .input-part{
     margin-top: 30px;
