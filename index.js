@@ -1,66 +1,45 @@
 
-//import axios from "axios"
-axios.get("https://dog.ceo/api/breeds/image/random").then(resp => {
 
-   console.log(resp.data);
-});
 
-/*showing a dog image in every render */
+/*start Login form */
  const signin=document.querySelector("#signin")
  signin.addEventListener("click",()=>{
  const email =document.querySelector("#email").value
  const password =document.querySelector("#email").value
  const popup =document.querySelector("#popup")
-  window.localStorage.setItem(email,password)
-  if(email!="" && password!=""){
-      popup.classList.add("none")
+window.localStorage.setItem(email,password)
+if(email!="" && password!=""){
+    popup.classList.add("none")
   }
 
  })
 const signup=document.querySelector("#signup")
 signup.addEventListener("click",()=>{
-    const popup =document.querySelector("#popup")
-    let email =document.querySelector("#existing-email").value
-     if(localStorage.getItem(email)){
-        console.log(email)
-     popup.classList.add("none")}
+const popup =document.querySelector("#popup")
+let email =document.querySelector("#existing-email").value
+if(localStorage.getItem(email)){
+    console.log(email)
+    popup.classList.add("none")}
        
-        else 
-        {
-            document.querySelector("#login-error").textContent="invalid email please retry or sign in"
-        }
-        
-
-
+else 
+ {
+     document.querySelector("#login-error").textContent="invalid email please retry or sign in"
 }
+  })
+/*end Login form */
 
-)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let image=document.querySelector("img")    
 const imageapi="https://dog.ceo/api/breeds/image/random"
-let image=document.querySelector("img")
-fetch(imageapi)
-	.then(response => response.json())
-	.then((data) => {
-        console.log(data.message)
-        image.src=data.message
-    })
-	.catch(err => console.error(err));  
+axios.get(imageapi)
+      .then(res => {
+        const data = res.data;
+         image.src=data.message
+      })
+
+
+
+
+
 
 btn=document.querySelector("button")
 btn.addEventListener("click",()=>{
@@ -74,23 +53,31 @@ const nationalityapi="https://api.nationalize.io/?name=mohamad".replace("mohamad
 
 
 /*fetching data for the gender and putting them in their tags */
-fetch(genderapi)
-	.then(response => response.json())
-	.then((data) => {
-        console.log(data)
-    gender.textContent=data.gender})
-	.catch(err => console.error(err));
+axios.get(imageapi)
+      .then(res => {
+        const data = res.data;
+         gender.textContent=data.gender
+      })
+
+
 
 /*fetching data for the age and putting them in their tags */
-fetch(ageapi)
-	.then(response => response.json())
-	.then((data) => {
-        console.log(data)
-    age.textContent=data.age})
-	.catch(err => console.error(err));
+axios.get(imageapi)
+      .then(res => {
+        const data = res.data;
+         age.textContent=data.age
+      })
 
 
 /*fetching data for the nationality and putting them in their tags */
+axios.get(imageapi)
+      .then(res => {
+        const data = res.data;
+         age.textContent=data.age
+      })
+
+
+
 fetch(nationalityapi)
 	.then(response => response.json())
 	.then((data) => {
