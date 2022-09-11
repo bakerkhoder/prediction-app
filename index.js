@@ -1,6 +1,3 @@
-
-
-
 /*start Login form */
  const signin=document.querySelector("#signin")
  signin.addEventListener("click",()=>{
@@ -10,9 +7,7 @@
 window.localStorage.setItem(email,password)
 if(email!="" && password!=""){
     popup.classList.add("none")
-  }
-
- })
+  }})
 const signup=document.querySelector("#signup")
 signup.addEventListener("click",()=>{
 const popup =document.querySelector("#popup")
@@ -22,12 +17,10 @@ if(localStorage.getItem(email)){
     popup.classList.add("none")}
        
 else 
- {
-     document.querySelector("#login-error").textContent="invalid email please retry or sign in"
-}
-  })
+ {document.querySelector("#login-error").textContent="invalid email please retry or sign in"}})
 /*end Login form */
 
+/* start rendering a random dog image on every load*/
 let image=document.querySelector("img")    
 const imageapi="https://dog.ceo/api/breeds/image/random"
 axios.get(imageapi)
@@ -35,11 +28,7 @@ axios.get(imageapi)
         const data = res.data;
          image.src=data.message
       })
-
-
-
-
-
+/* end rendering a random dog image on every load*/
 
 btn=document.querySelector("button")
 btn.addEventListener("click",()=>{
@@ -53,39 +42,47 @@ const nationalityapi="https://api.nationalize.io/?name=mohamad".replace("mohamad
 
 
 /*fetching data for the gender and putting them in their tags */
-axios.get(imageapi)
+axios.get(genderapi)
       .then(res => {
         const data = res.data;
          gender.textContent=data.gender
       })
 
-
-
 /*fetching data for the age and putting them in their tags */
-axios.get(imageapi)
+axios.get(ageapi)
       .then(res => {
         const data = res.data;
          age.textContent=data.age
       })
-
 
 /*fetching data for the nationality and putting them in their tags */
-axios.get(imageapi)
+axios.get(nationalityapi)
       .then(res => {
         const data = res.data;
-         age.textContent=data.age
-      })
-
-
-
-fetch(nationalityapi)
-	.then(response => response.json())
-	.then((data) => {
-        console.log(data.country)
         let countries=data.country
         nationality.textContent=""
      nationality.textContent=countries[0].country_id+"  "+countries[1].country_id
-        })
-    .catch(err => console.error(err));
-   })
+      })
+})
 
+
+const boredbutton=document.querySelector("#bored")
+
+const boredapi="https://www.boredapi.com/api/activity"
+boredbutton.addEventListener("click",()=>{
+ 
+    axios.get(boredapi)
+      .then(res => {
+         const boredtext=document.querySelector("#bored-text")
+        const data = res.data;
+        console.log(data.activity)
+        boredtext.innerHTML=data.activity
+
+         
+      })
+
+    
+})
+
+/*https://www.boredapi.com/api/activity */
+/*https://api.ipify.org/?format=json */
