@@ -1,4 +1,57 @@
+
+//import axios from "axios"
+axios.get("https://dog.ceo/api/breeds/image/random").then(resp => {
+
+   console.log(resp.data);
+});
+
 /*showing a dog image in every render */
+ const signin=document.querySelector("#signin")
+ signin.addEventListener("click",()=>{
+ const email =document.querySelector("#email").value
+ const password =document.querySelector("#email").value
+ const popup =document.querySelector("#popup")
+  window.localStorage.setItem(email,password)
+  if(email!="" && password!=""){
+      popup.classList.add("none")
+  }
+
+ })
+const signup=document.querySelector("#signup")
+signup.addEventListener("click",()=>{
+    const popup =document.querySelector("#popup")
+    let email =document.querySelector("#existing-email").value
+     if(localStorage.getItem(email)){
+        console.log(email)
+     popup.classList.add("none")}
+       
+        else 
+        {
+            document.querySelector("#login-error").textContent="invalid email please retry or sign in"
+        }
+        
+
+
+}
+
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const imageapi="https://dog.ceo/api/breeds/image/random"
 let image=document.querySelector("img")
 fetch(imageapi)
